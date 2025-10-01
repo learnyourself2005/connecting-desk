@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 console.log("🔍 URI from .env:", process.env.MONGO_URI);
 
 app.use(express.json());
+app.use(cookieParser());
 console.log("Loaded MONGO_URI:", process.env.MONGO_URI ? "✅" : "❌ Missing");
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
